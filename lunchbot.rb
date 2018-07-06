@@ -1,6 +1,7 @@
 require "slack-ruby-bot"
-require "dotenv/load"
-
-class LunchBot < SlackRubyBot::Bot
-
-end
+require "httparty"
+require "lunchbot/lib/yelp_service"
+require "lunchbot/commands/lunch"
+require "lunchbot/commands/specials"
+require "lunchbot/commands/search"
+require "lunchbot/bot"
