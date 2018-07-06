@@ -4,7 +4,7 @@ module Lunchbot
 
       help do
         title "specials"
-        desc "Searches for nearby open restaurants with lunch specials."
+        desc "Lists nearby open restaurants with lunch specials."
         long_desc "Ask me about 'specials'!"
       end
 
