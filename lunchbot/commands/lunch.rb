@@ -1,5 +1,3 @@
-require "Date"
-
 module Lunchbot
   module Commands
     class Lunch < SlackRubyBot::Commands::Base
