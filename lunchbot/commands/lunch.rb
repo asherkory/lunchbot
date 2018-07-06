@@ -4,7 +4,7 @@ module Lunchbot
 
       help do
         title "lunch"
-        desc "Tells you about food trucks and CIC lunch vendors."
+        desc "Tells you about food trucks and CIC lunch vendors for today or tomorrow."
         long_desc "Ask me about 'lunch today' or 'lunch tomorrow'!"
       end
 
