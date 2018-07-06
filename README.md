@@ -1,6 +1,6 @@
 # Lunchbot
 
-### A bot providing lunchtime assistance.
+### A slackbot providing lunchtime assistance.
 
 #### Commands:
 **help** - Shows help information.
