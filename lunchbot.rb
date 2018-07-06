@@ -1,3 +1,7 @@
 require "slack-ruby-bot"
+require "httparty"
+require "lunchbot/lib/yelp_service"
 require "lunchbot/commands/lunch"
+require "lunchbot/commands/specials"
+require "lunchbot/commands/search"
 require "lunchbot/bot"
