@@ -23,7 +23,9 @@ module Lunchbot
         if response["businesses"].empty?
           {
             fallback: "No restaurants found",
-            text: "No restaurants found. :("
+            title: ":(",
+            text: "No restaurants found.",
+            color: "#f2e540"
           }
         else
           response["businesses"].map do |business|
