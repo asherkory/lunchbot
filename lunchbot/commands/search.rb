@@ -20,16 +20,23 @@ module Lunchbot
       end
 
       def self.format_attachments(response)
-        response["businesses"].map do |business|
-          details = "#{business["price"]} #{business["categories"].map{|c| c["title"]}.join(", ")}\n#{business["location"]["address1"]}"
+        if response["businesses"].empty?
           {
-            fallback: business["name"], 
-            title: business["name"], 
-            title_link: business["url"], 
-            text: details, 
-            thumb_url: business["image_url"],
-            color: "#12dfad"
+            fallback: "No restaurants found"
+            text: "No restaurants found. :("
           }
+        else
+          response["businesses"].map do |business|
+            details = "#{business["price"]} #{business["categories"].map{|c| c["title"]}.join(", ")}\n#{business["location"]["address1"]}"
+            {
+              fallback: business["name"], 
+              title: business["name"], 
+              title_link: business["url"], 
+              text: details, 
+              thumb_url: business["image_url"],
+              color: "#12dfad"
+            }
+          end
         end
       end
     end
