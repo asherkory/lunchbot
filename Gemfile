@@ -6,6 +6,7 @@ gem "puma"
 gem "sinatra"
 gem "dotenv"
 gem "httparty"
+gem "newrelic_rpm"
 
 group :development, :test do
   gem "rake"

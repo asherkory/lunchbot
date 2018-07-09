@@ -1,5 +1,6 @@
 require "slack-ruby-bot"
 require "httparty"
+require "newrelic_rpm"
 require "lunchbot/lib/yelp_service"
 require "lunchbot/commands/lunch"
 require "lunchbot/commands/specials"

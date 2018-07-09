@@ -49,6 +49,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mustermann (1.0.2)
+    newrelic_rpm (5.2.0.345)
     nio4r (2.3.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -105,6 +106,7 @@ DEPENDENCIES
   dotenv
   foreman
   httparty
+  newrelic_rpm
   pry
   puma
   rake
