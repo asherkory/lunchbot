@@ -22,7 +22,7 @@ module Lunchbot
       def self.format_attachments(response)
         if response["businesses"].empty?
           {
-            fallback: "No restaurants found"
+            fallback: "No restaurants found",
             text: "No restaurants found. :("
           }
         else
