@@ -6,7 +6,7 @@ Dotenv.load
 require "lunchbot"
 require "web"
 
-Thread.abort_on_exception = true
+# Thread.abort_on_exception = true
 
 Thread.new do
   begin

@@ -11,6 +11,8 @@ module Lunchbot
       command "specials" do |client, data, match|
         response = YelpService.new({term: "lunch specials", limit: 5}).search
         client.web_client.chat_postMessage(
+          as_user: true,
+          token: client.token,
           channel: data.channel,
           attachments: format_attachments(response)
         )
@@ -18,8 +20,7 @@ module Lunchbot
 
       def self.format_attachments(response)
         response["businesses"].map do |business|
-          details = business["price"] + " " + business["categories"].map{|c| c["title"]}.join(", ") + 
-            "\n" + business["location"]["address1"]
+          details = "#{business["price"]} #{business["categories"].map{|c| c["title"]}.join(", ")}\n#{business["location"]["address1"]}"
           {
             fallback: business["name"], 
             title: business["name"], 
