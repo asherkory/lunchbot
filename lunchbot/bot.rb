@@ -19,6 +19,6 @@ module Lunchbot
       client.say(channel: data.channel, text: help_text)
     end
 
-    SlackRubyBot::Client.logger.level = Logger::WARN
+    SlackRubyBot::Client.logger.level = Logger::INFO
   end
 end

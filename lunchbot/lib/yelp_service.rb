@@ -5,7 +5,7 @@ module Lunchbot
     DEFAULT_QUERY = {
       latitude: "42.362917",
       longitude: "-71.083736",
-      radius: 1600,
+      radius: 1200,
       open_now: true,
       categories: "restaurants"
     }
