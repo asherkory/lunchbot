@@ -53,6 +53,7 @@ module Lunchbot
           str = "CIC 4th floor vendor: #{kitchen_vendor}. "
           str += "Food trucks at 3rd St: #{food_trucks.join(", ")}. " if FOOD_TRUCK_DATES.include?(Date.today)
           str += "Farmers' market: #{farmers_market}." if farmers_market && FARMERS_MARKET_DATES.include?(Date.today)
+          str
         end
       end
     end
