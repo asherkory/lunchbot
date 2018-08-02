@@ -24,7 +24,13 @@ module Lunchbot
         5 => ["Mr Tamole", "Da Bomb Truck", "Rice Burg"]
       }
 
+      FARMERS_MARKETS = {
+        3 => "next to Chipotle"
+        4 => "next to Commonwealth"
+      }
+
       FOOD_TRUCK_DATES = Range.new(Date.new(2018, 4, 2), Date.new(2018, 11, 16))
+      FARMERS_MARKET_DATES = Range.new(Date.new(2018, 6, 1), Date.new(2018, 9, 30))
 
       match /lunch\s(today|tomorrow)/ do |client, data, match|
         if match[1] == "today"
@@ -42,9 +48,11 @@ module Lunchbot
         else
           kitchen_vendor = KITCHEN_VENDORS[day]
           food_trucks = FOOD_TRUCKS[day]
+          farmers_market = FARMERS_MARKETS[day]
 
           str = "CIC 4th floor vendor: #{kitchen_vendor}. "
           str += "Food trucks at 3rd St: #{food_trucks.join(", ")}." if FOOD_TRUCK_DATES.include?(Date.today)
+          str += "Farmers' market: #{farmers_market}" if farmers_market && FARMERS_MARKET_DATES.include?(Date.today)
         end
       end
     end

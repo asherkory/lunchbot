@@ -40,7 +40,6 @@ module Lunchbot
           end
         end
       end
-
     end
   end
 end
