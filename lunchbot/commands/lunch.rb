@@ -25,7 +25,7 @@ module Lunchbot
       }
 
       FARMERS_MARKETS = {
-        3 => "next to Chipotle"
+        3 => "next to Chipotle",
         4 => "next to Commonwealth"
       }
 
