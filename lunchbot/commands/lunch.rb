@@ -17,11 +17,11 @@ module Lunchbot
       }
 
       FOOD_TRUCKS = {
-        1 => ["Bartlebys Food", "Chicken & Rice Guys"],
-        2 => ["Chik Chak Food Truck", "Boston Burger Co"],
-        3 => ["Sach Ko Asian Street Food", "Tandoor & Curry"],
-        4 => ["Roadies Diner", "Cupcake City"],
-        5 => ["Mr Tamole", "Da Bomb Truck", "Rice Burg"]
+        1 => ["Gogi on the Block", "The Bacon Truck"],
+        2 => ["Bartleby's Seitan Stand", "Teri-Yummy"],
+        3 => ["Coconut Louise", "Kebabish"],
+        4 => ["Roadies", "Sa Pa Vietnamese Kitchen"],
+        5 => ["Da Bomb Truck", "Rhythym and Wraps"]
       }
 
       FARMERS_MARKETS = {
@@ -29,7 +29,7 @@ module Lunchbot
         4 => "next to Commonwealth"
       }
 
-      FOOD_TRUCK_DATES = Range.new(Date.new(2018, 4, 2), Date.new(2018, 11, 16))
+      FOOD_TRUCK_DATES = Range.new(Date.new(2019, 3, 25), Date.new(2019, 11, 29))
       FARMERS_MARKET_DATES = Range.new(Date.new(2018, 6, 1), Date.new(2018, 9, 30))
 
       match /lunch\s(today|tomorrow)/ do |client, data, match|
