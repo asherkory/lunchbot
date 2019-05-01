@@ -25,12 +25,17 @@ module Lunchbot
       }
 
       FARMERS_MARKETS = {
-        3 => "next to Chipotle",
-        4 => "next to Commonwealth"
+        3 => {
+          place: "next to Chipotle",
+          dates: Range.new(Date.new(2019, 5, 16), Date.new(2019, 10, 31))
+        },
+        4 => {
+          place: "next to Commonwealth",
+          dates: Range.new(Date.new(2018, 6, 7), Date.new(2018, 9, 27))
+        }
       }
 
       FOOD_TRUCK_DATES = Range.new(Date.new(2019, 3, 25), Date.new(2019, 11, 29))
-      FARMERS_MARKET_DATES = Range.new(Date.new(2018, 6, 1), Date.new(2018, 9, 30))
 
       match /lunch\s(today|tomorrow)/ do |client, data, match|
         if match[1] == "today"
@@ -50,9 +55,9 @@ module Lunchbot
           food_trucks = FOOD_TRUCKS[day]
           farmers_market = FARMERS_MARKETS[day]
 
-          str = "CIC 4th floor vendor: #{kitchen_vendor}. "
-          str += "Food trucks at 3rd St: #{food_trucks.join(", ")}. " if FOOD_TRUCK_DATES.include?(Date.today)
-          str += "Farmers' market: #{farmers_market}." if farmers_market && FARMERS_MARKET_DATES.include?(Date.today)
+          str = "🏢 CIC 4th floor vendor: #{kitchen_vendor}. "
+          str += "\n🚚 Food trucks at 3rd St: #{food_trucks.join(", ")}. " if FOOD_TRUCK_DATES.include?(Date.today)
+          str += "\n🌾 Farmers' market: #{farmers_market[:place]}." if farmers_market && farmers_market[:dates].include?(Date.today)
           str
         end
       end
