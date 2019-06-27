@@ -31,7 +31,7 @@ module Lunchbot
         },
         4 => {
           place: "next to Commonwealth",
-          dates: Range.new(Date.new(2018, 6, 7), Date.new(2018, 9, 27))
+          dates: Range.new(Date.new(2019, 6, 7), Date.new(2019, 9, 27))
         }
       }
 
