@@ -10,7 +10,7 @@ module Lunchbot
 
       KITCHEN_VENDORS = {
         1 => "Chicken & Rice Guys",
-        2 => "Fuji",
+        2 => "Dumpling Daughter",
         3 => "Dates & Olives",
         4 => "Tenoch Mexican",
         5 => "Shabu & Mein",
