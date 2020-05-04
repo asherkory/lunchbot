@@ -1,13 +1,13 @@
 module Lunchbot
   module Commands
     class RecipeSearch < SlackRubyBot::Commands::Base
-      command "recipe for: "
-      command "recipe search: "
+      command "recipe"
+      command "make"
 
       help do
         title "recipe search"
         desc "Search for recipes"
-        long_desc "Try asking me 'recipe for: soup' or 'recipe search: soup'!"
+        long_desc "Try asking me for soup recipes: 'recipe soup' or 'make soup'!"
       end
 
       def self.call(client, data, match)
