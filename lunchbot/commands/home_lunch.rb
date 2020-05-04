@@ -15,7 +15,7 @@ module Lunchbot
       end
 
       def self.call(client, data, match)
-        response = RecipeService.new({endpoint: "random", number: 1, tags: "lunch"}).search
+        response = RecipeService.new({endpoint: "/random", number: 1, tags: "lunch"}).search
         client.web_client.chat_postMessage(
           as_user: true,
           token: client.token,
