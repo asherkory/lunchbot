@@ -16,6 +16,8 @@ module Lunchbot
         response = RecipeService.new({endpoint: "/search", number: 3, query: query}).search
         
         puts response
+        puts "class: #{response.class}"
+        puts "results class: #{response["results"].class}"
 
         ids = response["results"].map { |recipe| recipe["id"] }.join(",")
         recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids})
