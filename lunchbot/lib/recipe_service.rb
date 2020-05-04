@@ -9,7 +9,7 @@ module Lunchbot
     }
 
     def initialize(params = {})
-      @uri = "#{BASE_URI}#{params[:endpoint]}"
+      @uri = "#{BASE_URI}#{params.delete(:endpoint)}"
       @query = DEFAULT_QUERY.merge!(params)
     end
 
