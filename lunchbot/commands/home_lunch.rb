@@ -9,7 +9,6 @@ module Lunchbot
 
       match /(wfh|home|remote)\slunch/ do |client, data, match|
         response = RecipeService.new({endpoint: "/random", number: 1, tags: "lunch"}).search
-        puts response
         client.web_client.chat_postMessage(
           as_user: true,
           token: client.token,

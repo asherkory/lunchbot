@@ -2,7 +2,7 @@ module Lunchbot
   module Commands
     class IngredientSearch < SlackRubyBot::Commands::Base
       help do
-        title "ingredient search"
+        title "ingredients"
         desc "Search recipes by ingredients"
         long_desc "Try asking me 'ingredients tomatoes, cucumbers'!"
       end
@@ -10,6 +10,9 @@ module Lunchbot
       command "ingredients" do |client, data, match|
         ingredients = match[:expression]
         response = RecipeService.new({endpoint: "/findByIngredients", number: 3, ingredients: ingredients}).search
+        
+        puts response
+        
         ids = response.map { |recipe| recipe["id"] }.join(",")
         recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids})
 
