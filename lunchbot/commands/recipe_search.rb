@@ -14,13 +14,8 @@ module Lunchbot
       def self.call(client, data, match)
         query = match[:expression]
         response = RecipeService.new({endpoint: "/search", number: 3, query: query}).search
-        
-        puts response
-        puts "class: #{response.class}"
-        puts "results class: #{response["results"].class}"
-
         ids = response["results"].map { |recipe| recipe["id"] }.join(",")
-        recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids})
+        recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids}).search
 
         client.web_client.chat_postMessage(
           as_user: true,

@@ -10,11 +10,8 @@ module Lunchbot
       command "ingredients" do |client, data, match|
         ingredients = match[:expression]
         response = RecipeService.new({endpoint: "/findByIngredients", number: 3, ingredients: ingredients}).search
-        
-        puts response
-        
         ids = response.map { |recipe| recipe["id"] }.join(",")
-        recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids})
+        recipes = RecipeService.new({endpoint: "/informationBulk", ids: ids}).search
 
         client.web_client.chat_postMessage(
           as_user: true,

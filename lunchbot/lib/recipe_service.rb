@@ -14,8 +14,6 @@ module Lunchbot
     end
 
     def search
-      puts "uri: #{@uri}"
-      puts "query: #{@query}"
       @response = HTTParty.get(@uri, query: @query)
     end
   end
