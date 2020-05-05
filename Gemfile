@@ -7,6 +7,7 @@ gem "sinatra"
 gem "dotenv"
 gem "httparty"
 gem "newrelic_rpm"
+gem "reverse_markdown", '~> 2.0'
 
 group :development, :test do
   gem "rake"
