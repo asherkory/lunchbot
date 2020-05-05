@@ -3,7 +3,7 @@ module Lunchbot
     class HomeLunch < SlackRubyBot::Commands::Base
       help do
         title "wfh lunch"
-        desc "Finds a random lunch recipe."
+        desc "Selects a random lunch recipe."
         long_desc "Ask me for a 'wfh lunch', 'remote lunch', or 'home lunch'!"
       end
 
