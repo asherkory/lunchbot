@@ -1,7 +1,6 @@
 module Lunchbot
   module Commands
     class Search < SlackRubyBot::Commands::Base
-
       help do
         title "search"
         desc "Searches for your query within nearby open restaurants."
