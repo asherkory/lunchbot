@@ -1,13 +1,14 @@
 module Lunchbot
   class RecipeFormatter
     def self.format_recipe(recipe)
-      text = SlackTransformer::Html.new(recipe["summary"]).to_slack
+      mrkdwn_text = SlackTransformer::Html.new(recipe["summary"]).to_slack
+      trimmed_text = mrkdwn_text.slice(0, 480).concat("...")
       {
         mrkdwn_in: ["text"],
         fallback: recipe["title"],
         title: recipe["title"],
         title_link: recipe["sourceUrl"],
-        text: text,
+        text: trimmed_text,
         thumb_url: recipe["image"],
         color: "#12dfad"
       }
