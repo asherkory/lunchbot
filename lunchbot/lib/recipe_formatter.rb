@@ -1,10 +1,10 @@
 module Lunchbot
   class RecipeFormatter
     def self.format_recipe(recipe)
-      text = ReverseMarkdown.convert(recipe["summary"])
+      text = SlackTransformer::Html.new(recipe["summary"]).to_slack
       {
-        fallback: recipe["title"],
         mrkdwn_in: ["text"],
+        fallback: recipe["title"],
         title: recipe["title"],
         title_link: recipe["sourceUrl"],
         text: text,

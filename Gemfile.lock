@@ -67,8 +67,6 @@ GEM
     rack-protection (2.0.8.1)
       rack
     rake (13.0.1)
-    reverse_markdown (2.0.0)
-      nokogiri
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -98,6 +96,8 @@ GEM
       gli
       hashie
       websocket-driver
+    slack_transformer (1.0.1)
+      nokogiri (~> 1.10.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
     timers (4.3.0)
@@ -120,10 +120,10 @@ DEPENDENCIES
   pry
   puma
   rake
-  reverse_markdown (~> 2.0)
   rspec
   sinatra
   slack-ruby-bot
+  slack_transformer
 
 RUBY VERSION
    ruby 2.5.1p57
