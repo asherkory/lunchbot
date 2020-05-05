@@ -1,6 +1,7 @@
 require "slack-ruby-bot"
 require "httparty"
 require "newrelic_rpm"
+require "reverse_markdown"
 require "lunchbot/lib/recipe_formatter"
 require "lunchbot/lib/recipe_service"
 require "lunchbot/lib/yelp_service"
