@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "~> 2.5.0"
 
 gem "slack-ruby-bot"
-gem "celluloid-io"
+gem "async-websocket", "~>0.8.0"
 gem "puma"
 gem "sinatra"
 gem "dotenv"
