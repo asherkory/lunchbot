@@ -10,6 +10,7 @@ gem "dotenv"
 gem "httparty"
 gem "newrelic_rpm"
 gem "slack_transformer"
+gem "async-websocket"
 
 group :development, :test do
   gem "rake"
